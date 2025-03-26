@@ -15,9 +15,8 @@ public class LinkedQueue<T> implements Queue<T> {
             tail = head;
         }
         else{
-            LinkedNode<T> temp = tail;
-            temp.next = new LinkedNode<T>(element);
-            tail = temp;
+            tail.next = new LinkedNode<T>(element);
+            tail = tail.next;
         }
         size++;
     }
@@ -26,10 +25,13 @@ public class LinkedQueue<T> implements Queue<T> {
     public T dequeue() {
         if (head == null){
             return null;
-        }
-        else{
+        } else {
             LinkedNode<T> temp = head;
             head = head.next;
+            if (head == tail) {
+                tail = null;
+            }
+            size--;
             return temp.element;
         }
     }

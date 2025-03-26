@@ -11,6 +11,18 @@ public class CustomerOrder {
         _quantity = quantity;
     }
 
+    public String getName() {
+        return _name;
+    }
+
+    public String getDate() {
+        return _date;
+    }
+
+    public int getQuantity() {
+        return _quantity;
+    }
+
     public void ship() {
         if (_quantity > 0) {
             _quantity--;
