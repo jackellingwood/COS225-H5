@@ -8,14 +8,14 @@ public class LinkedQueue<T> implements Queue<T> {
         head = null;
     }
 
-    //O(1) - uh oh
+    //O(1)
     public void enqueue(T element) {
         if (head == null){
-            head = new LinkedNode<T>(element);
+            head = new LinkedNode<>(element);
             tail = head;
         }
         else{
-            tail.next = new LinkedNode<T>(element);
+            tail.next = new LinkedNode<>(element);
             tail = tail.next;
         }
         size++;
@@ -27,10 +27,10 @@ public class LinkedQueue<T> implements Queue<T> {
             return null;
         } else {
             LinkedNode<T> temp = head;
-            head = head.next;
             if (head == tail) {
                 tail = null;
             }
+            head = head.next;
             size--;
             return temp.element;
         }

@@ -8,6 +8,7 @@ public class OrderQueue {
 
     public OrderQueue(int stock) {
         _stock = stock;
+        _queue = new LinkedQueue<>();
     }
 
     public void addOrder(String name, String date, int quantity) {
